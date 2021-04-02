@@ -1,0 +1,36 @@
+[
+  {
+    "_id": "6067814597d320210a79f2ec",
+    "title": "JIMMY CHOO",
+    "description": "A classic silhouette in sparkling silver-tone lamé glitter fabric, Jimmy Choo's Romy 100 pumps prove to be a dazzling all-rounder. Made in Italy, they're shaped with a pointed toe and set on a thin shimmering silver hued heel. The leather lining and insole ensure utmost comfort. Take yours from day to dark with ease.",
+    "price": 4500,
+    "stock": 5,
+    "category": "High-heels",
+    "image": "https://img.mytheresa.com/1088/1088/66/jpeg/catalog/product/a8/P00393801.jpg",
+    "date": "2021-04-02T20:40:37.168Z",
+    "__v": 0
+  },
+  {
+    "_id": "606788f467c97d219ec154b9",
+    "title": "Bikini sandals",
+    "description": "Inspired by ballroom dancing, the Cabaret line are reminiscent of femininity and movement, two essential values of Maison Repetto. The Bikini sandals reveal the foot through thin straps while their high heels evokes the elevation that is sought by dancers during their performances. In addition, the platform at the front ensures comfort. This model is even more sophisticated thanks to the lurex star leather that reflects light.",
+    "price": 3900,
+    "stock": 2,
+    "category": "Sandals",
+    "image": "https://prod-cdn.repetto.fr/catalog/product/cache/2/image/1800x/040ec09b1e35df139433887a97daa66f/v/1/v1509stard-020-p2.jpg",
+    "date": "2021-04-02T21:13:24.747Z",
+    "__v": 0
+  },
+  {
+    "_id": "6067897c67c97d219ec154ba",
+    "title": "STUART WEITZMAN",
+    "description": "The KEELAN boots feature a just over-the-knee construction with a micro stretch back shaft. They are set on a micro block heel that offers height while remaining extra comfortable.",
+    "price": 4900,
+    "stock": 3,
+    "category": "Boots",
+    "image": "https://static.miinto.net/products/a1f09bf95b19815f405f546a6237c2ab.jpg?width=400&height=600&title=boots",
+    "date": "2021-04-02T21:15:40.656Z",
+    "__v": 0
+  }
+]
+  
