@@ -17,6 +17,7 @@ const Item = ({match}) => {
             <img src={item.image} alt={item.title} className="item-img"/>
             
             <h5>{item.title}</h5>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/4_stars.svg/1024px-4_stars.svg.png" alt="rating stars" className="rating-stars"/>
             <span>{item.price}</span>
             <span>{item.stock}</span>
             <br/>
