@@ -43,3 +43,23 @@ body{
 .header-nav span{
   margin:15px;
 }
+.checked {
+  color: orange;
+}
+.rating-stars{
+  width:180px;
+  height:35px
+}
+.product-item{
+  display:flex;
+  flex-direction: row;
+}
+.item-img {
+  width:50%;
+}
+
+.prodcut-detail{
+  display: flex;
+  flex-direction: column;
+  width:50%;
+}
