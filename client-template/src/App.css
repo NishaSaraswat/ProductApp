@@ -43,6 +43,7 @@ body{
 .header-nav span{
   margin:15px;
 }
+
 .item-path-detail input{
   width:80%;
   margin-left: 5%;
@@ -52,6 +53,7 @@ body{
 .item-path-detail button{
   height:36px;
 }
+
 .rating-stars{
   width:180px;
   height:35px
