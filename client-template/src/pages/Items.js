@@ -22,7 +22,7 @@ const Items = () => {
                     <div className="item-card" key={item._id}>
                         <img src={item.image} alt={item.title} className="item-img"/>
                         <h4>{item.title}</h4>
-                        <b>{item.price}</b>
+                        <b>{item.price}kr</b>
                         <br/>
                         <div className="add-to-cart">
                         <input type="text" defaultValue = '1'/>
