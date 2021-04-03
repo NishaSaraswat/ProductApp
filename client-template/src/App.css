@@ -43,9 +43,7 @@ body{
 .header-nav span{
   margin:15px;
 }
-.checked {
-  color: orange;
-}
+
 .rating-stars{
   width:180px;
   height:35px
@@ -54,7 +52,6 @@ body{
   display:flex;
   flex-direction: row;
 }
-
 
 .prodcut-detail{
   display: flex;

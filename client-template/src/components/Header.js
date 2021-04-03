@@ -15,10 +15,10 @@ const Header = ({handleChange,handleFilterChange}) => {
             <span>Admin</span>
             <select name="categories" onChange={handleDropDownChange}>
                 <option value="All">All</option>
-                <option value="High-heels">High-heels</option>
-                <option value="Sneakers">Sneakers</option>
-                <option value="Sandals">Sandals</option>
-                <option value="Boots">Boots</option>
+                <option value="Women">Women</option>
+                <option value="Men">Men</option>
+                <option value="Kids">Kids</option>
+                <option value="Sports">Sports</option>
             </select>
         </nav>
     )
