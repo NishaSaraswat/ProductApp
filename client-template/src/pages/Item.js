@@ -7,13 +7,18 @@ const Item = ({match}) => {
     useEffect(()=>{
         fetchData()
     },[])
-
+    
     const fetchData=async ()=>{
         const response=await fetch(`http://localhost:5000/products/${itemId}`)
         const data=await response.json()
         setItem(data)
     }
     return (
+       <>
+        <div className="item-path-detail">
+            <input type="text" value={`products/${item.title}`}></input>
+            <button>back</button>
+        </div>
         <div className="product-item">
             <img src={item.image} alt={item.title} className="item-img"/>
             <div className="product-detail">
@@ -31,6 +36,7 @@ const Item = ({match}) => {
                 <p>Description: {item.description}</p>
             </div>
         </div>
+       </>
     )
 }
 export default Item
