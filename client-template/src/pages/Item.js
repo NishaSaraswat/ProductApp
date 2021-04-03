@@ -17,7 +17,7 @@ const Item = ({match}) => {
     }
     return (
        <>
-        <Header />
+        
         <div className="item-path-detail">
             <input type="text" value={`products/${item.title}`}></input>
             <button><Link to ='/'>back</Link></button>

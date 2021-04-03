@@ -16,7 +16,7 @@ const Items = () => {
     
     return (
         <>
-            <Header />
+           
             <div className="items-wrapper">
                 {items.map((item)=>(
                     <div className="item-card" key={item._id}>
