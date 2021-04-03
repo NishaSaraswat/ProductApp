@@ -11,14 +11,13 @@ const App = () => {
     <div>
       <Router>
         <Switch>
-            <Route path="/products" exact component={Items} />
+            <Route path="/" exact component={Items} />
             <Route path="/products/:id" component={Item} />
             <Route path="/update-item/:id" component={UpdateItem}/>    
         </Switch>
-        <Footer />
       </Router>
+        <Footer />
     </div>
   )
 }
-
 export default App

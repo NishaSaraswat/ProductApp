@@ -14,24 +14,9 @@ const Items = () => {
         setItems(data);
     }
     
-    const fetchFilterData=async(filterValue)=>{
-        try{
-        const response=await fetch('http://localhost:5000/products');
-        const data=await response.json();
-        console.log(data)
-        const filteredItems=data.filter(item=>item.category===filterValue)
-        console.log(filteredItems)
-        setItems(filteredItems)
-    } catch(error){
-        console.log(error)
-    }
-    }
     return (
         <>
-            <Header 
-                handleChange={fetchData}
-                handleFilterChange={fetchFilterData}
-                />
+            <Header />
             <div className="items-wrapper">
                 {items.map((item)=>(
                     <div className="item-card" key={item._id}>
