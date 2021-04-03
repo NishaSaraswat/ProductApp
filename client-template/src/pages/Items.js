@@ -25,7 +25,7 @@ const Items = () => {
                         <b>{item.price}</b>
                         <br/>
                         <div className="add-to-cart">
-                        <input type="number"value="1" />
+                        <input type="text" defaultValue = '1'/>
                         <button>Add to Cart</button>
                         </div>
                         <p>In stock</p>
