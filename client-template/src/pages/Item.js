@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import Header from '../components/Header';
+import {Link} from 'react-router-dom'
 
 const Item = ({match}) => {
     console.log(match.params.id)
@@ -16,10 +17,10 @@ const Item = ({match}) => {
     }
     return (
        <>
-        <Header />
+        
         <div className="item-path-detail">
             <input type="text" value={`products/${item.title}`}></input>
-            <button>back</button>
+            <button><Link to ='/'>back</Link></button>
         </div>
         <div className="product-item">
             <img src={item.image} alt={item.title} className="item-img"/>
