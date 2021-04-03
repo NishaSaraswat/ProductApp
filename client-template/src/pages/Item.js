@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react'
+import Header from '../components/Header';
 
 const Item = ({match}) => {
     console.log(match.params.id)
@@ -15,6 +16,7 @@ const Item = ({match}) => {
     }
     return (
        <>
+        <Header />
         <div className="item-path-detail">
             <input type="text" value={`products/${item.title}`}></input>
             <button>back</button>
