@@ -1,10 +1,12 @@
 body{
   display: border-box;
   margin:5px;
+  padding-left:55px;
 }
 .items-btn{
   margin-left: 85%;
-  padding:15px
+  padding:15px;
+  
 }
 .items-wrapper{
   display:flex;
@@ -22,10 +24,15 @@ body{
   justify-content: center;
   text-align: center;
 }
+.item-card:hover{
+  transform: scale(1.05);
+}
 
 .item-img{
   width:200px;
   height:180px;
+  padding-left: 15px;
+  padding-top: 10px;
 }
 
 .add-to-cart{
