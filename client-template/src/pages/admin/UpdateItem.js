@@ -58,18 +58,18 @@ import {Link,useHistory} from 'react-router-dom'
     <h1>Update Product</h1>
     <form onSubmit={updateProduct}>
         <label>Title:</label> <br/>
-        <input type='text' name="title" value={item.title} onChange={handleChange}></input>
+        <input type='text' name="title" value={item.title||''} onChange={handleChange}></input>
         <br/> <br/>
         <label>Price:</label> <br/>
-        <input type='text' name="price" value={item.price} onChange={handleChange}></input>
+        <input type='text' name="price" value={item.price||''} onChange={handleChange}></input>
         <br/> <br/>
         <label>Stock:</label> <br/>
-        <input type='text' name="stock" value={item.stock} onChange={handleChange}></input>
+        <input type='text' name="stock" value={item.stock||''} onChange={handleChange}></input>
         <br/> <br/>
         <label>Description</label> <br/>
-        <textarea name='description' value={item.description} rows="10" cols="30" onChange={handleChange}></textarea>
+        <textarea name='description' value={item.description||''} rows="10" cols="30" onChange={handleChange}></textarea>
         <br/><br/>
-        <select name='category' value={item.category} onChange={handleChange}>
+        <select name='category' value={item.category||''} onChange={handleChange}>
             <option  value='kids'>Kids</option>
             <option  value='women'>Women</option>
             <option  value='sports'>Sports</option>
