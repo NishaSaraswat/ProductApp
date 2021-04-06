@@ -6,6 +6,8 @@ import Item from './pages/Item';
 import UpdateItem from './pages/admin/UpdateItem';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import styled from 'styled-components';
+import {motion} from 'framer-motion';
 import CreateItem from './pages/admin/CreateItem';
 
 const App = () => {

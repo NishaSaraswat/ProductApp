@@ -1,13 +1,15 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import styled from 'styled-components';
+import {motion} from 'framer-motion';
+import {NavWrapper, StyledReactLink} from '../itemsStyles'
 
 const Header = () => {
-
     return (
-        <nav className="header-nav">
-            <span><Link to='/'>Products</Link></span>
-            <span><Link to='/manage-products'>Admin</Link></span>
-        </nav>
+        <NavWrapper className="header-nav">
+            <StyledReactLink to='/'>Products</StyledReactLink>
+            <StyledReactLink to='/manage-products'>Admin</StyledReactLink>
+        </NavWrapper>
     )
 }
 
