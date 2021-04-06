@@ -1,6 +1,6 @@
 // VG del
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
+import {useHistory } from "react-router-dom";
 import Form from "../../components/Form";
 
 function UpdateItem({ match }) {
@@ -31,7 +31,7 @@ function UpdateItem({ match }) {
     });
   };
   console.log(item);
-  const updateProduct = async (e) => {
+  const  handleSubmit= async (e) => {
     e.preventDefault();
     try {
       await fetch("http://localhost:5000/products/" + item._id, {
@@ -52,14 +52,12 @@ function UpdateItem({ match }) {
       <h1>Update Product</h1>
 
       <Form
-        updateProduct={updateProduct}
+        handleSubmit={handleSubmit}
         handleChange={handleChange}
         item={item}
+        pageId="update-item"
       />
-      <button onClick={updateProduct}>Update</button>
-      <br />
-      <br />
-      <Link to="/manage-products">Back</Link>
+      
     </>
   );
 }

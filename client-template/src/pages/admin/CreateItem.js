@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import {useHistory } from "react-router-dom";
 import Form from "../../components/Form";
 
 function CreateItem() {
@@ -38,10 +38,7 @@ function CreateItem() {
         handleChange={handleChange}
         item={item}
       />
-      <button onClick={handleSubmit}>Create</button>
-      <br />
-      <br />
-      <Link to="/manage-products">Back</Link>
+      
     </>
   );
 }
