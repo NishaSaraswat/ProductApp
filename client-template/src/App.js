@@ -6,6 +6,7 @@ import Item from './pages/Item';
 import UpdateItem from './pages/admin/UpdateItem';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import CreateItem from './pages/admin/CreateItem';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Switch>
             <Route path="/" exact component={Items} />
             <Route path="/products/:id" component={Item} />
+            <Route path="/create-item" component={CreateItem}/>
             <Route path="/update-item/:id" component={UpdateItem}/>    
         </Switch>
         <Footer />
