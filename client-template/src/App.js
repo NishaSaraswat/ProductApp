@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import styled from 'styled-components';
 import {motion} from 'framer-motion';
+import CreateItem from './pages/admin/CreateItem';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Switch>
             <Route path="/" exact component={Items} />
             <Route path="/products/:id" component={Item} />
+            <Route path="/create-item" component={CreateItem}/>
             <Route path="/update-item/:id" component={UpdateItem}/>    
         </Switch>
         <Footer />
