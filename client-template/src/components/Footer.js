@@ -1,16 +1,22 @@
-import React from 'react'
+import React from 'react';
+import facebookLogo from '../pictures/facebook.png'
+import instagramLogo from '../pictures/instagram-icon.jpeg'
+import youtubeLogo from '../pictures/YouTube-icon.png'
+import whatsupLogo from '../pictures/whatsapp-icons.jpeg'
+import twitter from '../pictures/twitter-icon.png'
 
 const Footer = () => {
     return (
-        <div>
-            <ul>
-                <li><a href="http://www.facebook.com"><img src="http://www.facebook.com" alt="Facebook"/></a></li>
-                <li><a href="http://www.twitter.com"><img src="http://www.twitter.com" alt="Twitter"/></a></li>
-                <li><a href="http://www.youtube.com"><img src="http://www.youtube.com" alt="Youtube"/></a></li>
-                <li><a href="http://www.instagram.com"><img src="http://www.instagram.com" alt="Instagram"/></a></li>
-                <li><a href="https://www.whatsapp.com/"><img src="https://www.whatsapp.com/" alt="Whatsup"/></a></li>
-            </ul>
-        </div>
+        <>
+            <div className="icons-container">
+                <a href="http://www.facebook.com"><img src={facebookLogo} alt="Facebook" className="footer-icon"/></a>
+                <a href="http://www.twitter.com"><img src={twitter} alt="Twitter" className="footer-icon"/></a>
+                <a href="http://www.youtube.com"><img src={youtubeLogo} alt="Youtube"className="footer-icon"/></a>
+                <a href="http://www.instagram.com"><img src={instagramLogo} alt="Instagram"className="footer-icon"/></a>
+                <a href="https://www.whatsapp.com/"><img src={whatsupLogo} alt="Whatsup"className="footer-icon"/></a>
+                <p>Copy right @ copy right 2021</p>
+            </div>
+        </>
     )
 }
 
