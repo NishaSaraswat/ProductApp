@@ -1,9 +1,10 @@
 import React from "react";
+import { Link} from "react-router-dom";
 
-function Form({ handleChange, item }) {
+function Form({ handleSubmit,handleChange, item, pageId}) {
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>Title:</label> <br />
         <input
           type="text"
@@ -60,6 +61,10 @@ function Form({ handleChange, item }) {
         </select>
         <br />
         <br />
+        <button>{pageId==="update-item" ? "Update":"Create"}</button>
+           <br />
+            <br />
+         <Link to="/manage-products">Back</Link>
       </form>
     </div>
   );
