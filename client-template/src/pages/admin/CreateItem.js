@@ -1,61 +1,41 @@
-import React, {useState, useEffect} from 'react';
-import {Link,useHistory} from 'react-router-dom'
+import React, {useState} from 'react';
+import {Link,useHistory} from 'react-router-dom';
 
 
- function UpdateItem({match}) {
+ function CreateItem() {
    
    const [item, setItem] = useState({});
    const history = useHistory();
 
-   useEffect (()=>{
-        fetchProduct();
-
-  },[]);
-
-  const fetchProduct = async()=>{
-    try {
-        const response = await fetch('http://localhost:5000/products/'+match.params.id);
-        const data = await response.json();
-        
-        setItem(data);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-  const handleChange=(e)=>{
+   const handleChange=(e)=>{
+     e.preventDefault();
     const name = e.target.name
     setItem({
       ...item,
       [name]: e.target.value
       
-    });
+    })
     }
-    console.log(item);
-    const updateProduct = async(e)=>{
-      e.preventDefault();
-      try {
-        await fetch('http://localhost:5000/products/'+item._id,{
-
-
-          method:'PATCH',
-          headers:{
-            'Content-Type':'application/json'
-          },
+  const handleSubmit = async(e)=>{
+    e.preventDefault();
+    try {
+        await fetch('http://localhost:5000/products/',{
+        method:'POST',
+        headers:{
+          'Content-Type':'application/json'
+        },
           body:JSON.stringify(item)
-
         });
-        //redirection
         history.push('/manage-products');
-        
-      } catch (error) {
-        console.log(error);
-      }
-
+    } catch (error) {
+      console.log(error);
+    }
   }
+  
   return (
     <>
-    <h1>Update Product</h1>
-    <form onSubmit={updateProduct}>
+    <h1>Create New Product</h1>
+    <form onSubmit={handleSubmit}>
         <label>Title:</label> <br/>
         <input type='text' name="title" value={item.title||''} onChange={handleChange}></input>
         <br/> <br/>
@@ -75,12 +55,12 @@ import {Link,useHistory} from 'react-router-dom'
             <option  value='men'>Men</option>
         </select>
         <br/><br/>
-        <button>Update</button>
+        <button>Create</button>
         <br/><br/>
-        <Link to="/manage-products">Back</Link>
+        {/* <Link to="/manage-products">Back</Link> */}
 
     </form>
     </>
   );
 }
-export default UpdateItem
+export default CreateItem
