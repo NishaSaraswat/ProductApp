@@ -1,25 +1,14 @@
 
 import React, {useState, useEffect} from 'react';
-import {Link} from "react-router-dom";
-import styled from 'styled-components';
-
-
-const Button = styled.button `
-    border: none;
-    background-color: #fff;
-    color: blue;
-    &:hover {
-        cursor: pointer;
-    }
-`
-
-const ButtonField = styled.td`
-    width: calc(100% - 900px);
-    border: 1px solid black;
-`
+import ProductList from '../../components/ProductList';
+import {Link} from 'react-router-dom';
+import {
+    PageWrapper,
+    Title
+} from '../../styles.js';
 
 function ManageItems() {
-    const [products, setProducts] = useState([]);
+    const [items, setItems] = useState([]);
     
     useEffect(() => {
         fetchProducts();
@@ -32,16 +21,18 @@ function ManageItems() {
                 throw new Error('HTTP Error! status: ' + response.status);
             }
             const data = await response.json();
-            setProducts(data);
+            // setProducts(data);
+            setItems(data);
             console.log(data);
         } catch (error) {
             console.log(error);
         }
     }
 
-    const deleteProduct = async (productID) => {
+    const deleteProduct = async (item) => {
         try {
-            await fetch('http://localhost:5000/products/' + productID, {
+            await fetch(`http://localhost:5000/products/${item['_id']}`, 
+            {
                 method: 'DELETE', // GET, POST, PATCH, DELETE
             });
         } catch (message) {
@@ -51,25 +42,38 @@ function ManageItems() {
         fetchProducts();
     }
  
-return(
+  //  return (
+  //      <PageWrapper>
+  //          <Title>Manage Product</Title> 
+  //          <ProductList 
+  //              products={products} 
+  //              deleteProduct={deleteProduct}
+  //          />
+  //      </PageWrapper>
+  //  )
+
+return (
     <>
-    <h1>Manage Product</h1>
-     <ul>
-          {products.map(item => (
-            <li key={item.id}>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p> 
-            </li>
-          ))}
-          <div>
-                    <ButtonField>
-                        <Link to={`/update-products/${products['_id']}`}><Button>Update</Button></Link>|
-                        <Button onClick={deleteProduct}>Delete</Button>
-                    </ButtonField>
-          </div>
-    </ul>
+    <div>
+    <Title>Manage Product</Title>
+        <table>
+          <tbody>
+            <tr>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th>Stock</th>
+              <th>Category</th>
+              <th>Date</th>
+              <th>Action</th>
+            </tr>
+          <ProductList items={items} deleteProduct ={deleteProduct}/>
+          </tbody>
+        </table>
+        <Link to="/create-item">Create New Product</Link>
+      </div>
     </>
-)
+  );
 
 
 

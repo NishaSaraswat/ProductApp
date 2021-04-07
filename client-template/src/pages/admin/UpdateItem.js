@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import {useHistory } from "react-router-dom";
 import Form from "../../components/Form";
+import styled from 'styled-components'
 
 function UpdateItem({ match }) {
   const [item, setItem] = useState({});
@@ -48,8 +49,8 @@ function UpdateItem({ match }) {
     }
   };
   return (
-    <>
-      <h1>Update Product</h1>
+    <Wrapper>
+      <Title>Update Product</Title>
 
       <Form
         handleSubmit={handleSubmit}
@@ -58,7 +59,19 @@ function UpdateItem({ match }) {
         pageId="update-item"
       />
       
-    </>
+    </Wrapper>
   );
 }
+const Title = styled.h1`
+  font-size: 1.8em;
+  text-align: center;
+  color: white;
+  font-family:Verdana;
+   `;
+
+const Wrapper = styled.section`
+background:rgba(0, 0, 0, 0.86);
+height:100vh;
+`;
+
 export default UpdateItem;
