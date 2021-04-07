@@ -1,5 +1,6 @@
 import React from "react";
 import { Link} from "react-router-dom";
+import styled from 'styled-components'
 
 function Form({ handleSubmit,handleChange, item, pageId}) {
   return (
@@ -61,12 +62,35 @@ function Form({ handleSubmit,handleChange, item, pageId}) {
         </select>
         <br />
         <br />
-        <button>{pageId==="update-item" ? "Update":"Create"}</button>
+        <Actiondiv>
+        <Button>{pageId==="update-item" ? "Update":"Create"}</Button>
            <br />
             <br />
-         <Link to="/manage-products">Back</Link>
+         <Button><Link to="/manage-products">&larr;Back</Link></Button>
+         </Actiondiv>
       </form>
     </div>
   );
 }
+const Actiondiv = styled.div`
+  display:flex;
+   justify-content:center;
+   a{
+      text-decoration:none;
+      color:black;
+     }
+ `
+const Button = styled.button`
+background: ${props => props.primary ? "white" : "white"};
+color: ${props => props.primary ? "rgba(79, 79, 79, 1)" :"rgba(79, 79, 79, 1)"};
+
+font-size: 1em;
+margin: 1em;
+padding: 0.25em 1em;
+border: 2px solid black;
+border-radius: 5px;
+font-family:Verdana;
+  
+`;
+
 export default Form;
