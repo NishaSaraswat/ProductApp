@@ -1,16 +1,19 @@
 import React from 'react'
-import Product from './Product'
+import Product from './Product.js'
 
-function ProductList({ products, deleteProduct }) {
+function ProductList({ items, deleteProduct }) {
     return (
-        <div>
+        <>
             {
-                products.map( Product => (
-                    <Product key={Product['_id']} product={Product} deleteProduct={deleteProduct} />
-                )) 
+                items.map( item => {
+
+                        return(
+                            <Product key={item._id} item={item} deleteProduct={deleteProduct}/>
+                        )
+                })
             }
-        </div>
-    )
+        </>
+    );
 }
 
 export default ProductList

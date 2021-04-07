@@ -1,13 +1,14 @@
 
 import React, {useState, useEffect} from 'react';
 import ProductList from '../../components/ProductList';
+import {Link} from 'react-router-dom';
 import {
     PageWrapper,
     Title
 } from '../../styles.js';
 
 function ManageItems() {
-    const [products, setProducts] = useState([]);
+    const [items, setItems] = useState([]);
     
     useEffect(() => {
         fetchProducts();
@@ -21,15 +22,17 @@ function ManageItems() {
             }
             const data = await response.json();
             // setProducts(data);
+            setItems(data);
             console.log(data);
         } catch (error) {
             console.log(error);
         }
     }
 
-    const deleteProduct = async (productID) => {
+    const deleteProduct = async (item) => {
         try {
-            await fetch('http://localhost:5000/products/' + productID, {
+            await fetch(`http://localhost:5000/products/${item['_id']}`, 
+            {
                 method: 'DELETE', // GET, POST, PATCH, DELETE
             });
         } catch (message) {
@@ -50,37 +53,26 @@ function ManageItems() {
   //  )
 
 return (
-    <PageWrapper>
+    <>
+    <div>
     <Title>Manage Product</Title>
-    <ProductList 
-    products={products} 
-    deleteProduct={deleteProduct}
-    />
-      <div className="product-list">
-        <table className="table">
-          <thead>
+        <table>
+          <tbody>
             <tr>
               <th>Title</th>
               <th>Description</th>
               <th>Price</th>
               <th>Stock</th>
               <th>Category</th>
+              <th>Date</th>
+              <th>Action</th>
             </tr>
-          </thead>
-          <tbody>
-            {products.map((products) => (
-              <tr key={products._id}>
-                <td>{products.title}</td>
-                <td>{products.description}</td>
-                <td>{products.price}</td>
-                <td>{products.stock}</td>
-                <td>{products.category}</td>
-              </tr>
-            ))}
+          <ProductList items={items} deleteProduct ={deleteProduct}/>
           </tbody>
         </table>
+        <Link to="/create-item">Create New Product</Link>
       </div>
-    </PageWrapper>
+    </>
   );
 
 
