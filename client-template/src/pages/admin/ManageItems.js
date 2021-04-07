@@ -2,9 +2,13 @@
 import React, {useState, useEffect} from 'react';
 import ProductList from '../../components/ProductList';
 import {Link} from 'react-router-dom';
+import styled from 'styled-components';
 import {
     PageWrapper,
-    Title
+    Title,
+    Citem,
+    Tr1,
+    Table
 } from '../../styles.js';
 
 function ManageItems() {
@@ -41,24 +45,15 @@ function ManageItems() {
 
         fetchProducts();
     }
- 
-  //  return (
-  //      <PageWrapper>
-  //          <Title>Manage Product</Title> 
-  //          <ProductList 
-  //              products={products} 
-  //              deleteProduct={deleteProduct}
-  //          />
-  //      </PageWrapper>
-  //  )
 
 return (
     <>
+    <PageWrapper>
     <div>
     <Title>Manage Product</Title>
-        <table>
+        <Table>
           <tbody>
-            <tr>
+            <Tr1>
               <th>Title</th>
               <th>Description</th>
               <th>Price</th>
@@ -66,12 +61,16 @@ return (
               <th>Category</th>
               <th>Date</th>
               <th>Action</th>
-            </tr>
+              <th>Action</th>
+            </Tr1>
           <ProductList items={items} deleteProduct ={deleteProduct}/>
           </tbody>
-        </table>
-        <Link to="/create-item">Create New Product</Link>
+        </Table>
+        <br>
+        </br>
+        <Link to="/create-item"><Citem>Create New Product</Citem></Link>
       </div>
+     </PageWrapper>
     </>
   );
 

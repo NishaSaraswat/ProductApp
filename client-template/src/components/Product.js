@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import {
     CreateButton,
     DeleteButton,
+    UpdateButton,
     StyledReactLink
 } from '../styles.js';
 
@@ -16,12 +17,13 @@ function Product({ item, deleteProduct }) {
         <>
             <tr>
                     <td>{item.title}</td>
+                    <td>{item.description}</td>
                     <td>{item.price} kr</td>
                     <td>{item.stock} pc.</td>
                     <td>{item.category}</td>
                     <td>{`${pDate.getFullYear()}-${pDate.getMonth()}-${pDate.getDate()}`}</td>
-                    <td><Link to={`/update-item/${item._id}`}>Update </Link></td>
-                    <td><a href="##" onClick={()=>deleteProduct(item)}> Delete</a></td>
+                    <td><Link to={`/update-item/${item._id}`}><UpdateButton>Update</UpdateButton></Link></td>
+                    <td><a href="##" onClick={()=>deleteProduct(item)}><DeleteButton>Delete</DeleteButton></a></td>
                 </tr>
              </>   
             
