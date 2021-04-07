@@ -6,7 +6,7 @@ import whatsupLogo from '../pictures/whatsapp-icons.jpeg'
 import twitter from '../pictures/twitter-icon.png'
 import styled from 'styled-components';
 import {motion} from 'framer-motion';
-import {FooterWrapper,FooterIcons} from '../itemsStyles'
+import {FooterIconsWrapper,FooterIcons,FooterContainer} from '../itemsStyles'
 
 const Footer = () => {
     const list = {
@@ -29,7 +29,8 @@ const Footer = () => {
         hidden: { opacity: 0, x: -100 },
       }
     return (
-            <FooterWrapper 
+      <FooterContainer style={{position: 'absolute', left: 0, right: 0,  bottom:0}}>
+            <FooterIconsWrapper 
                 initial="hidden"
                 animate="visible"
                 variants={list}>
@@ -38,8 +39,9 @@ const Footer = () => {
                 <motion.li variants={item}><a href="http://www.youtube.com"><FooterIcons src={youtubeLogo} alt="Youtube"className="footer-icon"/></a></motion.li>
                 <motion.li variants={item}><a href="http://www.instagram.com"><FooterIcons src={instagramLogo} alt="Instagram"className="footer-icon"/></a></motion.li>
                 <motion.li variants={item}><a href="https://www.whatsapp.com/"><FooterIcons src={whatsupLogo} alt="Whatsup"className="footer-icon"/></a></motion.li>
-                <motion.li variants={item}><p>Copy right @ copy right 2021</p></motion.li>
-            </FooterWrapper>
+            </FooterIconsWrapper>
+            <p>Copy right @ copy right 2021</p>
+      </FooterContainer>
     )
 }
 
