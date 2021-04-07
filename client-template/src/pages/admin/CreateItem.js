@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {useHistory } from "react-router-dom";
 import Form from "../../components/Form";
+import {PageWrapper,Title} from '../../createUpdateStyle'
 
 function CreateItem() {
   const [item, setItem] = useState({});
@@ -31,15 +32,15 @@ function CreateItem() {
   };
 
   return (
-    <>
-      <h1>Create New Product</h1>
+    <PageWrapper>
+      <Title>Create New Product</Title>
       <Form
         handleSubmit={handleSubmit}
         handleChange={handleChange}
         item={item}
       />
       
-    </>
+    </PageWrapper>
   );
 }
 export default CreateItem;
