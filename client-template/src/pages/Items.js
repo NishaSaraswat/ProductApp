@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import styled from 'styled-components';
 import {motion} from 'framer-motion';
 import {ItemsWrapper,ItemCard,ItemImg} from "../itemsStyles"
+import {ItemsVariants} from "../itemsAnimations"
 
 const Items = () => {
     const [items, setItems]=useState([]);
@@ -18,8 +19,13 @@ const Items = () => {
     
     return (
         <>
-           
-            <ItemsWrapper>
+        
+            <ItemsWrapper
+                initial={'start'}
+                animate={'stop'}
+                variants={ItemsVariants}
+            
+            >
                 {items.map((item)=>(
                     <ItemCard key={item._id}>
                         <ItemImg src={item.image} alt={item.title} className="item-img"/>
