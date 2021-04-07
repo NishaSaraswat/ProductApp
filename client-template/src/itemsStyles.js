@@ -15,7 +15,7 @@ export const StyledReactLink = styled(Link)`
     font-size: 1.5em;
     font-weight:bold;
     text-align: center;
-    color: rgb(255, 99, 71);
+    color:  rgba(242, 153, 74, 1) ;
 `
 export const ItemsWrapper=styled(motion.section)`
     display:flex;
