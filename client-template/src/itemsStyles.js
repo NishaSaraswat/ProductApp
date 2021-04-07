@@ -6,7 +6,7 @@ export const NavWrapper=styled(motion.nav)`
     display:flex;
     flex-direction: row;
     justify-content: flex-end; 
-    background-color:black;
+    background-color:rgba(0, 0, 0, 0.86);
 `
 export const StyledReactLink = styled(Link)` 
     color: white;
@@ -101,7 +101,7 @@ export const ItemDetailImg=styled(motion.img)`
   margin-right:40px;
   width:30%;
   border-radius:55%;
-  margin-top:40px;
+  margin-top:60px;
   margin-bottom:20px;
 `
 export const ItemDetailText=styled(motion.div)`
