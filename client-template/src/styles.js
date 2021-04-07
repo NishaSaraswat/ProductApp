@@ -7,6 +7,9 @@ export const PageWrapper = styled.section`
     text-align: center;
     justify-content: center;
     color:white;
+    display:flex;
+    flex-direction: row;
+    flex_wrap:wrap;
 `
 
 export const Title = styled.h1`
