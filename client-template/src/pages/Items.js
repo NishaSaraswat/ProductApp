@@ -26,7 +26,6 @@ const Items = () => {
         }
     }
     }
-
     return (
         <>
             <ItemsWrapper
