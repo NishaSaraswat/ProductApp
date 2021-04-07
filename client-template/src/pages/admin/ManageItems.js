@@ -1,22 +1,10 @@
 
 import React, {useState, useEffect} from 'react';
-import {Link} from "react-router-dom";
-import styled from 'styled-components';
-
-
-const Button = styled.button `
-    border: none;
-    background-color: #fff;
-    color: blue;
-    &:hover {
-        cursor: pointer;
-    }
-`
-
-const ButtonField = styled.td`
-    width: calc(100% - 900px);
-    border: 1px solid black;
-`
+import ProductList from '../../components/ProductList';
+import {
+    PageWrapper,
+    Title
+} from '../../styles.js';
 
 function ManageItems() {
     const [products, setProducts] = useState([]);
@@ -32,7 +20,7 @@ function ManageItems() {
                 throw new Error('HTTP Error! status: ' + response.status);
             }
             const data = await response.json();
-            setProducts(data);
+            // setProducts(data);
             console.log(data);
         } catch (error) {
             console.log(error);
@@ -51,25 +39,49 @@ function ManageItems() {
         fetchProducts();
     }
  
-return(
-    <>
-    <h1>Manage Product</h1>
-     <ul>
-          {products.map(item => (
-            <li key={item.id}>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p> 
-            </li>
-          ))}
-          <div>
-                    <ButtonField>
-                        <Link to={`/update-products/${products['_id']}`}><Button>Update</Button></Link>|
-                        <Button onClick={deleteProduct}>Delete</Button>
-                    </ButtonField>
-          </div>
-    </ul>
-    </>
-)
+  //  return (
+  //      <PageWrapper>
+  //          <Title>Manage Product</Title> 
+  //          <ProductList 
+  //              products={products} 
+  //              deleteProduct={deleteProduct}
+  //          />
+  //      </PageWrapper>
+  //  )
+
+return (
+    <PageWrapper>
+    <Title>Manage Product</Title>
+    <ProductList 
+    products={products} 
+    deleteProduct={deleteProduct}
+    />
+      <div className="product-list">
+        <table className="table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th>Stock</th>
+              <th>Category</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((products) => (
+              <tr key={products._id}>
+                <td>{products.title}</td>
+                <td>{products.description}</td>
+                <td>{products.price}</td>
+                <td>{products.stock}</td>
+                <td>{products.category}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </PageWrapper>
+  );
 
 
 

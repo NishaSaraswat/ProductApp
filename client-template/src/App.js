@@ -21,7 +21,7 @@ const App = () => {
             <Route path="/products/:id" component={Item} />
             <Route path="/create-item" component={CreateItem}/>
             <Route path="/update-item/:id" component={UpdateItem}/>
-            <Route path="/manage-products/:id" component={ManageItems}/>
+            <Route path="/manage-products" component={ManageItems}/>
         </Switch>
         <Footer />
       </Router>
