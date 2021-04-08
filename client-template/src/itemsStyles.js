@@ -123,7 +123,7 @@ export const ItemDetailImg=styled(motion.img)`
   margin-left:6%;
   margin-right:3%;
   width:30%;
-  border-radius:55%;
+  border-radius:20%;
   margin-top:60px;
   margin-bottom:20px;
 `
