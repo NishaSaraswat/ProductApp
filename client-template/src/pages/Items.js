@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {Link} from "react-router-dom";
 import styled from 'styled-components';
 import {motion} from 'framer-motion';
-import {ItemsWrapper,ItemCard,ItemImg,LinkToDetail, AddToCart} from "../itemsStyles"
+import {ItemsWrapper,ItemCard,ItemImg,LinkToDetail, AddToCart, AddToCartButton, AddToCartInput} from "../itemsStyles"
 
 const Items = () => {
     const [items, setItems]=useState([]);
@@ -32,17 +32,19 @@ const Items = () => {
                 initial={'start'}
                 animate={'stop'}
                 variants={ItemsVariants}
-            
+                
             >
                 {items.map((item)=>(
-                    <ItemCard key={item._id}>
+                    <ItemCard key={item._id}
+                        whileHover={{ scale: 1.05 }}
+                    >
                         <ItemImg src={item.image} alt={item.title} className="item-img"/>
                         <h4>{item.title}</h4>
                         <b>{item.price} kr</b>
                         <br/>
                         <AddToCart>
-                            <input type="text" defaultValue = '1'/>
-                            <button>Add to Cart</button>
+                            <AddToCartInput type="text" defaultValue = '1'/>
+                            <AddToCartButton>Add to Cart</AddToCartButton>
                         </AddToCart>
                         <p>In stock</p>
                         <br/>

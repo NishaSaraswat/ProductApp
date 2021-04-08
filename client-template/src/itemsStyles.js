@@ -2,11 +2,13 @@ import styled from 'styled-components';
 import {Link} from "react-router-dom";
 import {motion} from 'framer-motion';
 
+
 export const NavWrapper=styled(motion.nav)`
     display:flex;
     flex-direction: row;
     justify-content: flex-end; 
     background-color:rgba(0, 0, 0, 0.86);
+    padding-right:20px;
 `
 export const StyledReactLink = styled(Link)` 
     color: white;
@@ -22,9 +24,8 @@ export const ItemsWrapper=styled(motion.section)`
     flex-direction:row;
     flex-wrap: wrap;
     width:100%;
-    /*background-color:rgba(0, 0, 0, 0.86)*/
 `
-export const ItemCard=styled.div`
+export const ItemCard=styled(motion.div)`
   width:23%;
   margin-left:10px;
   margin-bottom:10px;
@@ -52,24 +53,46 @@ export const AddToCart=styled.div`
   align-items:center;
   text-align:center;
 `
+export const AddToCartInput=styled.input`
+  text-align:center;
+  height:23px;
+`
+export const AddToCartButton=styled.button`
+  margin-top:10px;
+  background-color:green;
+  height:30px;
+  color:white;
+  font-weight:bold;
+`
 export const LinkToDetail=styled(Link)`
   text-decoration:none;
   color:white
 `
-export const FooterWrapper=styled(motion.footer)`
+export const FooterContainer=styled.div`
+  display:flex;
+  flex-direction:column;
+  flex-wrap:wrap;
+  background-color: rgba(0, 0, 0, 0.86);
+  text-align:center;
+  color:white;
+  margin-bottom:0;
+  left:0;
+  right:0
+`
+export const FooterIconsWrapper=styled(motion.footer)`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content:center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.86);
-  padding:10px;
-  height: 70px;
+  height: 40px;
+  padding-top:18px;
   color:white;
   list-style:none;
 `
 export const FooterIcons=styled.img`
-  width:50px;
-  height:50px;
+  width:35px;
+  height:35px;
+  margin-right:50px;
 `
 
 export const ItemWrapper=styled.div`
@@ -97,10 +120,10 @@ export const ProductDetail=styled.div`
 `
 
 export const ItemDetailImg=styled(motion.img)`
-  margin-left:20px;
-  margin-right:40px;
+  margin-left:6%;
+  margin-right:3%;
   width:30%;
-  border-radius:55%;
+  border-radius:20%;
   margin-top:60px;
   margin-bottom:20px;
 `

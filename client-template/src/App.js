@@ -10,20 +10,23 @@ import Header from './components/Header';
 import styled from 'styled-components';
 import {motion} from 'framer-motion';
 import CreateItem from './pages/admin/CreateItem';
+import { BodyWrapper } from './itemsStyles';
 
 const App = () => {
   return (
-    <div>
+    <div className="page-container">
       <Router>
-      <Header/>
-        <Switch>
-            <Route path="/" exact component={Items} />
-            <Route path="/products/:id" component={Item} />
-            <Route path="/create-item" component={CreateItem}/>
-            <Route path="/update-item/:id" component={UpdateItem}/>
-            <Route path="/manage-products" component={ManageItems}/>
-        </Switch>
-        <Footer />
+        <Header/>
+        <div className="content-container">
+          <Switch>
+              <Route path="/" exact component={Items} />
+              <Route path="/products/:id" component={Item} />
+              <Route path="/create-item" component={CreateItem}/>
+              <Route path="/update-item/:id" component={UpdateItem}/>
+              <Route path="/manage-products" component={ManageItems}/>
+          </Switch>
+        </div>
+        <div className="footer-container"><Footer /></div>
       </Router>
        
         

@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import styled from 'styled-components';
 import {motion} from 'framer-motion';
-import {ItemInput, StyledReactLink, ItemDetailImg, ProductDetail, ItemDetailText, ItemWrapper} from '../itemsStyles'
+import {ItemInput, StyledReactLink, ItemDetailImg, ProductDetail, ItemDetailText, ItemWrapper, AddToCart, AddToCartInput, AddToCartButton} from '../itemsStyles'
 
 const Item = ({match}) => {
     console.log(match.params.id)
@@ -41,15 +41,15 @@ const Item = ({match}) => {
             }}
                 >
                 <h2>{item.title}</h2>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/4_stars.svg/1024px-4_stars.svg.png" alt="rating stars" style={{width:'100px', height:'20px',margin:'10px', 'margin-top':'-15px'}}/>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/4_stars.svg/1024px-4_stars.svg.png" alt="rating stars" style={{width:'100px', height:'20px', 'margin-top':'-15px'}}/>
                 <br/>
                 <span>{item.price}kr</span>
                 <br/>
                 <span>Stock: {item.stock}</span>
                 <br/>
-                <div className="add-to-cart">
-                        <input type="number"value="1" />
-                        <button>Add to Cart</button>
+                <div>
+                    <AddToCartInput type="number"value="1" />
+                    <AddToCartButton>Add to Cart</AddToCartButton>
                 </div>
                 <br/>
                 <span>Category: {item.category}</span>
