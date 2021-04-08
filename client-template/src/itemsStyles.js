@@ -23,7 +23,8 @@ export const ItemsWrapper=styled(motion.section)`
     display:flex;
     flex-direction:row;
     flex-wrap: wrap;
-    width:100%;
+    justify-content:center;
+    align-items:center;
 `
 export const ItemCard=styled(motion.div)`
   width:23%;
