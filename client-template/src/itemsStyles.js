@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import {Link} from "react-router-dom";
 import {motion} from 'framer-motion';
 
+
 export const NavWrapper=styled(motion.nav)`
     display:flex;
     flex-direction: row;
@@ -23,9 +24,6 @@ export const ItemsWrapper=styled(motion.section)`
     flex-direction:row;
     flex-wrap: wrap;
     width:100%;
-    position:relative;
-    min-height:80vh;
-    /*background-color:rgba(0, 0, 0, 0.86)*/
 `
 export const ItemCard=styled(motion.div)`
   width:23%;
@@ -77,7 +75,6 @@ export const FooterContainer=styled.div`
   background-color: rgba(0, 0, 0, 0.86);
   text-align:center;
   color:white;
-  position: absolute;
   margin-bottom:0;
   left:0;
   right:0
