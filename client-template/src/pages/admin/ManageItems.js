@@ -55,7 +55,6 @@ return (
           <tbody>
             <Tr1>
               <th>Title</th>
-              <th>Description</th>
               <th>Price</th>
               <th>Stock</th>
               <th>Category</th>

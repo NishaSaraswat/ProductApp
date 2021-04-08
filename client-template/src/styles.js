@@ -28,6 +28,11 @@ export const Tr1 = styled.tr`
     background-color: rgb(255, 99, 71);
 `
 
+export const Td1 = styled.td`
+  border: 0.5px solid white;
+`
+
+
 export const Table = styled.table`
     border:1px solid white;
     text-align: center;
