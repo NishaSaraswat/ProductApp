@@ -36,7 +36,7 @@ const Items = () => {
             >
                 {items.map((item)=>(
                     <ItemCard key={item._id}
-                        whileHover={{ scale: 1.1 }}
+                        whileHover={{ scale: 1.05 }}
                     >
                         <ItemImg src={item.image} alt={item.title} className="item-img"/>
                         <h4>{item.title}</h4>
