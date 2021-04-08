@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import {useHistory } from "react-router-dom";
 import Form from "../../components/Form";
-import {PageWrapper,Title} from '../../createUpdateStyle'
+import {PageWrapper} from '../../createUpdateStyle';
+import styled from 'styled-components';
+import {motion} from 'framer-motion';
+import{pageVariants} from '../../createpageAnimation.js'
+
+
 
 function CreateItem() {
   const [item, setItem] = useState({});
@@ -30,10 +35,14 @@ function CreateItem() {
       console.log(error);
     }
   };
-
   return (
     <PageWrapper>
-      <Title>Create New Product</Title>
+      <Title
+      initial={'hidden'}
+      animate={'visible'}
+      variants={pageVariants}
+      
+      >Create New Product</Title>
       <Form
         handleSubmit={handleSubmit}
         handleChange={handleChange}
@@ -43,4 +52,12 @@ function CreateItem() {
     </PageWrapper>
   );
 }
+export const Title = styled(motion.h1)`
+  font-size: 1.8em;
+  color: white;
+  margin-bottom:40px;
+  font-family:Verdana;
+  margin-top:0px;
+  box-sizing:borderbox;
+   `;
 export default CreateItem;

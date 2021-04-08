@@ -1,10 +1,17 @@
 import React from "react";
 import { Link} from "react-router-dom";
 import{Actiondiv,UpdateButton,CreateButton,Label,Input} from '../formStyle.js'
+import {motion} from 'framer-motion';
+import{pageVariants} from '../createpageAnimation.js'
+
 
 function Form({ handleSubmit,handleChange, item, pageId}) {
   return (
-    <div>
+    <motion.div
+    initial={'hidden'}
+      animate={'visible'}
+      variants={pageVariants}
+    >
      <Actiondiv>
       <form onSubmit={handleSubmit}>
         <Label>Title:</Label> <br />
@@ -69,7 +76,7 @@ function Form({ handleSubmit,handleChange, item, pageId}) {
         
       </form>
       </Actiondiv>
-    </div>
+    </motion.div>
   );
 }
 

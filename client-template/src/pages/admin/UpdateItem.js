@@ -2,7 +2,10 @@
 import React, { useState, useEffect } from "react";
 import {useHistory } from "react-router-dom";
 import Form from "../../components/Form";
-import {PageWrapper,Title} from '../../createUpdateStyle'
+import styled from 'styled-components';
+import {motion} from 'framer-motion';
+
+import {PageWrapper} from '../../createUpdateStyle'
 
 function UpdateItem({ match }) {
   const [item, setItem] = useState({});
@@ -50,7 +53,27 @@ function UpdateItem({ match }) {
   };
   return (
     <PageWrapper>
-      <Title>Update Product</Title>
+      <Title
+      initial={{
+          x:-100,
+          y:-50,
+          opacity:0,
+          color:'#FFFFFF'
+
+      }}
+      animate={{
+        x:0,
+        y:0,
+        opacity:1,
+        color:'#DCD427',
+        rotate:360
+      }}
+      transition={{
+        delay:1,
+        duration:2,
+        ease:"backInOut"
+      }}
+      >Update Product</Title>
 
       <Form
         handleSubmit={handleSubmit}
@@ -62,4 +85,12 @@ function UpdateItem({ match }) {
     </PageWrapper>
   );
 }
+export const Title = styled(motion.h1)`
+  font-size: 1.8em;
+  color: white;
+  margin-bottom:40px;
+  font-family:Verdana;
+  margin-top:0px;
+  box-sizing:borderbox;
+   `;
 export default UpdateItem;
